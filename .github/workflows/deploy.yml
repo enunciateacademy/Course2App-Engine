@@ -16,6 +16,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: ./course2app-engine
+
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -35,7 +39,7 @@ jobs:
       - name: Upload website
         uses: actions/upload-pages-artifact@v4
         with:
-          path: ./dist
+          path: ./course2app-engine/dist
 
   deploy:
     needs: build
